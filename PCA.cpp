@@ -329,7 +329,7 @@ gsl_matrix* CPCA::EMPCA(gsl_matrix* matrix, const int pcNum)
     {
         for(int j=0;j<pcNum;++j)
         {
-            u = gsl_rng_uniform(r); //产生一个[0, 1)区间上的随机数
+            u = gsl_rng_uniform(r);
             gsl_matrix_set(C,i,j,u - 0.5);
         }
     }
