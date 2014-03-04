@@ -454,26 +454,9 @@ gsl_matrix* CPCA::EMPCA_SVD(gsl_matrix* matrix, const int pcNum)
 	gsl_vector* WK = gsl_vector_alloc(A->size2);
     gsl_matrix_memcpy(A, cov);
 
-	//printf("\n");
-	//for(int i=0;i<A->size1;++i)
- //   {
- //       for(int j=0;j<A->size2;++j)
- //       {
- //           printf("%f ",gsl_matrix_get(A,i,j));
- //       }
-	//	printf("\n");
- //   }
-	//printf("\n");
 
 	gsl_linalg_SV_decomp(A,evec,eval,WK);	//SVD DECOMP
 
-	/*printf("\n");
-	for (int i = 0; i < A->size1; i++)
-	{
-		printf("%f ",gsl_vector_get(eval,i));
-	}
-	printf("\n");
-*/
     /* step 7: assign the result matrix from row 1 and col 0
     result[ 1:rowSize, 0:colSize] = orthonormalized matrix * eigenMatrix
     */
